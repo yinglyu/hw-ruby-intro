@@ -4,15 +4,20 @@
 
 def sum arr
   # https://ruby-doc.org/core-2.4.0/Array.html
+=begin
   return 0 if arr.empty?
   sum = 0
   arr.each do |element| 
     sum += element
   end
-  return sum
+=end
+  #inject(initial, sym) → obj
+  #https://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-inject
+  arr.inject(0, :+)
 end
 
 def max_2_sum arr
+=begin
   # https://ruby-doc.org/core-2.4.0/Array.html
   return 0 if arr.empty?
   return arr[0] if arr.length == 1
@@ -27,6 +32,8 @@ def max_2_sum arr
   end
   sum = max1 + max2
   return sum
+=end
+  sum(arr.sort.last(2))
 end
 
 def sum_to_n? arr, n
@@ -82,22 +89,12 @@ class BookInStock
     @price=price
   end
   #https://dev.to/k_penguin_sato/ruby-getters-and-setters-1p30
-  def isbn
-    @isbn
-  end
-  def price
-    @price
-  end
-  def isbn=(isbn)
-    @isbn = isbn
-  end
-  def price=(price)
-    @price = price
-  end
+  
   def price_as_string
     #https://ruby-doc.org/core-2.4.0/String.html#method-i-25
     '$' + "%.2f" % @price
   end
 # YOUR CODE HERE
+  attr_accessor :price, :isbn
 
 end
