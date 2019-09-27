@@ -82,22 +82,12 @@ class BookInStock
     @price=price
   end
   #https://dev.to/k_penguin_sato/ruby-getters-and-setters-1p30
-  def isbn
-    @isbn
-  end
-  def price
-    @price
-  end
-  def isbn=(isbn)
-    @isbn = isbn
-  end
-  def price=(price)
-    @price = price
-  end
+  
   def price_as_string
     #https://ruby-doc.org/core-2.4.0/String.html#method-i-25
     '$' + "%.2f" % @price
   end
 # YOUR CODE HERE
+  attr_accessor :price, :isbn
 
 end
