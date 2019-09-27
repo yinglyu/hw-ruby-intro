@@ -17,6 +17,7 @@ def sum arr
 end
 
 def max_2_sum arr
+=begin
   # https://ruby-doc.org/core-2.4.0/Array.html
   return 0 if arr.empty?
   return arr[0] if arr.length == 1
@@ -31,6 +32,8 @@ def max_2_sum arr
   end
   sum = max1 + max2
   return sum
+=end
+  sum(arr.sort.last(2))
 end
 
 def sum_to_n? arr, n
