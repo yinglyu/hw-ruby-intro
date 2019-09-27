@@ -4,12 +4,16 @@
 
 def sum arr
   # https://ruby-doc.org/core-2.4.0/Array.html
+=begin
   return 0 if arr.empty?
   sum = 0
   arr.each do |element| 
     sum += element
   end
-  return sum
+=end
+  #inject(initial, sym) → obj
+  #https://ruby-doc.org/core-2.4.0/Enumerable.html#method-i-inject
+  arr.inject(0, :+)
 end
 
 def max_2_sum arr
